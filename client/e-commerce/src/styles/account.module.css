@@ -1,0 +1,33 @@
+/* styles/Account.module.css */
+.accountContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.tabButton {
+  transition: all 0.2s ease;
+}
+
+.tabButton:hover {
+  background-color: #f1f1f1;
+}
+
+.activeTab {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.formInput {
+  transition: border-color 0.2s ease;
+}
+
+.formInput:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}

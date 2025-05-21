@@ -48,6 +48,7 @@ const ProductPage: NextPage = () => {
   const handleAddToCart = async () => {
     try {
       if (!product) return;
+      console.log(product._id);
       await addToCart(product._id, quantity); // ✅ send product ID and quantity
       alert("Added to cart!");
     } catch (err) {

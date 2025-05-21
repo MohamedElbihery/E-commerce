@@ -1,10 +1,8 @@
 import { Cart } from "../../../database/models/cart.model.js";
 import { Coupon } from "../../../database/models/coupon.model.js";
 import { Product } from "../../../database/models/product.model.js";
-import { User } from "../../../database/models/user.model.js";
 import { handleAsyncError } from "../../middlewares/errors/asyncError.js";
 import { AppError } from "../../utilities/appError.js";
-import { ObjectId } from "mongodb";
 
 function calcTotalPrice(cart) {
   cart.totalPrice = cart.items.reduce(
@@ -18,9 +16,14 @@ function calcTotalPrice(cart) {
 }
 
 const addToCart = handleAsyncError(async (req, res, next) => {
-  const userCart = await Cart.findOne({ user: req.user._id });
 
+  const userCart = await Cart.findOne({ user: req.user._id });
+  console.log(userCart);
+  
+  
   const product = await Product.findById(req.body.product);
+  console.log(product);
+  
   if (!product) return next(new AppError("product not found", 409));
 
   req.body.price = product.price;

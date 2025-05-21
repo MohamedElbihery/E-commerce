@@ -60,7 +60,7 @@ export const deleteCartItem = async (itemId: string): Promise<CartResponse> => {
     })
     .json<CartResponse>();
 
-  console.log("API Response:", response);  // Log the response for debugging
+  console.log("API Response:", response); // Log the response for debugging
   return response;
 };
 

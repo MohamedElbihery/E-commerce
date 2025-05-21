@@ -10,10 +10,13 @@ export const verifyToken = handleAsyncError(async (req, res, next) => {
   }
 
   const token = authHeader.split(" ")[1];
+   console.log(token);
 
   jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
     if (err) return next(new AppError("Not authorized", 403));
     req.recevier = decoded;
+    console.log(req.recevier);
+    
     next();
   });
 });

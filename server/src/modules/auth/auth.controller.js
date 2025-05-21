@@ -60,6 +60,7 @@ const changeUserPassword = handleAsyncError(async (req, res, next) => {
 const protectedRoutes = handleAsyncError(async (req, res, next) => {
   // 1- Check for token existence
   const authHeader = req.headers.authorization;
+  
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return next(new AppError("Invalid token", 401));
   }

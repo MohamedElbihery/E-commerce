@@ -3,7 +3,6 @@ import { handleAsyncError } from "../../middlewares/errors/asyncError.js";
 import { AppError } from "../../utilities/appError.js";
 
 const addUserWishList = handleAsyncError(async (req, res, next) => {
-  console.log(req.user)
   const wishList = await User.findByIdAndUpdate(
     req.user._id,
     {

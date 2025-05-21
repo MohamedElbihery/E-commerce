@@ -7,6 +7,7 @@ const Navbar = () => {
   const cartItems = [
     { id: 1, name: "LCD Monitor" },
     { id: 2, name: "HI Gamepad" },
+    { id: 3, name: "HI Gamepad" },
   ];
 
   return (
